@@ -38,7 +38,7 @@ class empleado(models.Model):
 	direccionEmpleado= fields.Char(string='Direccion',required=True)
 	telefonoEmpleado= fields.Char(string='Telefono')
 
-class proyectos(models.Model):
+class proyecto(models.Model):
 	_name = 'proyectos.proyecto'
 	_description ='Atributos de un proyecto'
 
