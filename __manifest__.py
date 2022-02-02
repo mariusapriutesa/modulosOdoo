@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "proyectos",
+    'name': "Gestion y asignacion del proyecto",
 
     'summary': """
         Esta application es una fuera de serie""",
 
     'description': """
-        Long description of module's purpose
+        La mejor app de aqui
     """,
 
     'author': "Seseña CF",
