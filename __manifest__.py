@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "proyecto Marius",
+    'name': "Gestion y asignacion de proyectos",
 
     'summary': """
         Esta application es una fuera de serie""",
