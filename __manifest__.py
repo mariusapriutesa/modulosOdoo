@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Gestion y asignacion del proyecto",
+    'name': "proyecto Marius",
 
     'summary': """
         Esta application es una fuera de serie""",
@@ -9,7 +9,7 @@
         La mejor app de aqui
     """,
 
-    'author': "Seseña CF",
+    'author': "Sesena CF",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
