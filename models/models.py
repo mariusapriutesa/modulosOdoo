@@ -25,6 +25,10 @@ class departamento(models.Model):
 	#atributos
 	nombreDpto = fields.Char(string='Nombre departamento', required=True)
 
+	#ReLacion entre tablas
+
+	empleado_id = fields.One2many('proyectos.empleado','departamento_id',string ='Departamento')
+
 
 
 class empleado(models.Model):
@@ -38,12 +42,18 @@ class empleado(models.Model):
 	direccionEmpleado= fields.Char(string='Direccion',required=True)
 	telefonoEmpleado= fields.Char(string='Telefono')
 
+	#ReLacion entre tablas
+	departamento_id = fields.Many2one('proyectos.departamento',string='Empleados')
+	proyecto_id=fields.Many2many('proyectos.proyecto',string='Proyectos')
+
 class proyecto(models.Model):
 	_name = 'proyectos.proyecto'
 	_description ='Atributos de un proyecto'
 
-	#atributos
+	#atributos del proyecto
 	nombreProyecto= fields.Char(string='Nombre proyecto',required=True)
 	tipoProyecto= fields.Selection(string='Tipo de proyecto',selection=[('f','Front-End'),('b','Back-end')],help='tipos de proyecto')
 	ciudadProyecto= fields.Char(string='Ciudad')
 	descripcionProyecto=fields.Char(string='Descripcion del proyecto')
+
+	empleado_id= fields.Many2many('proyectos.empleado', string='Empleados')
