@@ -17,7 +17,8 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 from odoo import models ,fields, api
-
+from datetime import date
+from dateutil.relativedelta import*
 class departamento(models.Model):
 	_name = 'proyectos.departamento'
 	_description= 'Define los atributos de un departamento'
@@ -41,6 +42,13 @@ class empleado(models.Model):
 	fechaNacimiento= fields.Date(string='fecha nacimiento',required=True,default = fields.date.today())
 	direccionEmpleado= fields.Char(string='Direccion',required=True)
 	telefonoEmpleado= fields.Char(string='Telefono')
+	edad = fields.Integer(string= 'Edad', compute='_getEdad')
+
+	@api.depends('fechaNacimiento')
+	def _getEdad(self):
+		hoy= date.today()
+		for empleado in self:
+			empleado.edad = relativedelta(hoy, empleado.fechaNacimiento).years
 
 	#ReLacion entre tablas
 	departamento_id = fields.Many2one('proyectos.departamento',string='Empleados')
